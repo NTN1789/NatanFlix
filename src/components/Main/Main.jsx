@@ -1,9 +1,11 @@
 import React from 'react'
-import {} from "./MainStyles"
+import { ContainerMain } from "./MainStyles"
 
 const Main = () => {
   return (
-    <div>Main</div>
+    <ContainerMain id='main'>
+      Main
+      </ContainerMain>
   )
 }
 

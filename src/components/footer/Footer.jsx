@@ -3,7 +3,9 @@ import {} from "./FooterStyles"
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div id='footer'>
+      Footer
+      </div>
   )
 }
 
