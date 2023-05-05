@@ -23,13 +23,14 @@ top:5.1rem;
 right:34rem;
 font-size:1.9rem;
 letter-spacing:5px;
-text-transform:unset;
+
 color:wheat;
 
 `
 
 
 export const Navigation = styled.nav `
+position:fixed;
 display:flex;
 justify-content:space-evenly;
 align-items:center;
