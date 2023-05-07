@@ -1,0 +1,40 @@
+
+  
+   .container .carousel{
+     display: flex;
+     overflow-x: auto;
+     scroll-behavior:smooth ; 
+   
+   }
+   
+   .container .carousel::-webkit-scrollbar {
+   
+     display: none;
+   }
+   
+   .container .carousel .item {
+   
+     
+      
+       width:20% ;
+  margin:20px;
+ 
+       
+       flex: none;
+   
+   }
+   
+   .container .carousel .item .image img {
+     width: 35vh;
+     height:25vw;;
+     object-fit:cover ;
+   }
+   
+ 
+  
+   .container .buttons button:first-child img {
+   
+     transform:rotate(180deg) ;
+    
+     
+   }

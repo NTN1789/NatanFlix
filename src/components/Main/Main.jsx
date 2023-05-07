@@ -1,10 +1,12 @@
 import React, { useLayoutEffect, useState } from 'react'
-import { ContainerMain } from "./MainStyles"
+import { BoxTitulo, ContainerMain, Texto } from "./MainStyles"
 import Card from './Card'
 
 
 
+
 const base_url = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=1"
+
 
 
 
@@ -32,24 +34,32 @@ useLayoutEffect(() => {
 
 
   return (
-    
+     
     <ContainerMain id='main'>
+      <BoxTitulo>
+      <Texto> Filmes em Destaque</Texto>
+      </BoxTitulo>
 
-      <div className='container'>
+   
     {
-
+        
         (movieData.length === 0 ) ? <p>not found</p> : movieData.map((res,id) =>{
           return(
+            <>
             <Card informacao={res} key={id} />
+           
+            </>
           )
 
         })
 
+
+
     }
      
-      </div>
+  
    
-
+        
       </ContainerMain>
   )
 }

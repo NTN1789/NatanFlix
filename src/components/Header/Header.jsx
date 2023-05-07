@@ -23,7 +23,7 @@ const Header = () => {
           <li><a href="#main">Home</a> </li>
           <li><a href="">Movies</a> </li>
           <li><a href="">Series</a> </li>
-          <li><a href="#footer">Footer</a> </li>
+          <li><a href="#footer">mais comentados</a> </li>
         </ul>
        </Navigation>
     
