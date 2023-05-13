@@ -1,5 +1,5 @@
 import React , {useState,useEffect, useRef}from 'react'
-import {} from "./CarroselStyles"
+import  { Caixa, Slogan , NavBar, NavList , NavItem} from "./CarroselStyles"
 
 import Card from '../Filmes/Card'
 import {  ContainerMain , ButtonCarrosel} from '../Filmes/FilmesStyles'
@@ -9,6 +9,9 @@ import  "./carrosel.css"
 import Seta from "../../assets/Seta.png"
 import Filmes from "../Filmes/Filmes"
 import Banner from '../Banner/Banner'
+
+import Buscar from "../../assets/buscar.png"
+import { Input } from '../NavBar/HeaderStyles'
 
 const base_url = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=2"
 const Footer = () => {
@@ -62,7 +65,26 @@ if(!movieData || !movieData.length) return null;
 <Banner/>
 
       <ContainerMain   id='footer' className='container'   >
+      <NavBar>
+            <NavList>
+                <NavItem>Popular</NavItem>
+                <NavItem>Drama</NavItem>
+                <NavItem>Ação</NavItem>
+                <NavItem>Aventura</NavItem>
+                <NavItem>Comédia</NavItem>
+                <NavItem>Crime</NavItem>
+                <NavItem>Fantasia</NavItem>
+                <NavItem>Família</NavItem>
+      
+            </NavList>
+            <Input type="text" /> 
+         <img src={Buscar}  alt="Buscar"/>
+            
+        </NavBar>
+        <Caixa>
 
+<Slogan>últimos Lançamentos</Slogan>
+        </Caixa>
 
 
 
@@ -104,7 +126,7 @@ if(!movieData || !movieData.length) return null;
 
      </div>
 
-     
+     <Filmes/>
          
       </ContainerMain>
       </div>

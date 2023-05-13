@@ -1,7 +1,8 @@
 import React, { useLayoutEffect, useState } from 'react'
-import { BoxTitulo, ContainerMain, Texto } from "./FilmesStyles"
+import {  ContainerMain,  } from "./FilmesStyles"
 import Card from './Card'
 import { GlobalStyle } from '../../styles/Global'
+import { Caixa, Slogan } from '../Carrosel/CarroselStyles'
 
 
 
@@ -38,10 +39,10 @@ useLayoutEffect(() => {
      
     <ContainerMain id='main'>
     <GlobalStyle/>
-      <BoxTitulo>
-      <Texto> Filmes em Destaque</Texto>
-      </BoxTitulo>
+   <Caixa>
 
+<Slogan>Em alta</Slogan>
+   </Caixa>
    
     {
         

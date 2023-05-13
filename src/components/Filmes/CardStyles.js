@@ -11,13 +11,13 @@ align-items:center;
 flex-wrap:wrap;
 
 
-width:25%;
+width:23%;
 
 
 
 
 
-padding:10px 20px;
+padding:10px 30px;
 
 
 

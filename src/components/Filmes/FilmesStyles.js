@@ -5,7 +5,7 @@ export const ContainerMain = styled.main `
 
 background: -webkit-linear-gradient(rgb(10, 10, 10), rgb(10, 10, 10));
 
-padding-top:18%;
+padding-top:8%;
 
 display:flex;
 justify-content:center;
@@ -19,18 +19,7 @@ flex-wrap:wrap;
 
 `
 
-export const Texto = styled.h1 `
-text-align:center;
-font-size:2.4rem;
 
-letter-spacing:3px;
-font-weight:bold;
-font-family: 'Sigmar', cursive;
-color:gold;
-text-transform:uppercase;
-
-
-`
 
 export const BoxTitulo = styled.div `
 width:100%;
