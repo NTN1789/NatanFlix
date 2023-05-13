@@ -1,10 +1,11 @@
-
-import Header from "./components/Header/Header"
-import Main from "./components/Main/Main"
-import Movie from "./components/Movie/Movie"
-import Footer from "./components/footer/Footer"
+import {BrowserRouter,Routes,Route} from "react-router-dom"
+import NavBar from "./components/NavBar/Navbar"
 
 
+import Carrosel from "./components/Carrosel/Carrosel"
+
+import Login from "./components/Login/Login"
+import Series from "./components/Series/Series"
 
 
 
@@ -19,9 +20,16 @@ function App() {
 
   return (
     <>
-     <Header/>
-        <Main/>
-    <Footer/>
+    <BrowserRouter>
+     <NavBar/>
+     <Routes>
+      <Route path="/" element={<Carrosel/>}/>
+      <Route path="/series" element={<Series/>}/>
+      <Route path="login" element={<Login/>}/>
+     </Routes>
+
+        
+    </BrowserRouter>
 
   
     </>

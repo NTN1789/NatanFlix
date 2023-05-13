@@ -1,13 +1,14 @@
 import React , {useState,useEffect, useRef}from 'react'
-import {} from "./FooterStyles"
+import {} from "./CarroselStyles"
 
-import Card from '../Main/Card'
-import { BoxTitulo, ContainerMain , Buttons, ButtonsSec } from '../Main/MainStyles'
+import Card from '../Filmes/Card'
+import {  ContainerMain , ButtonCarrosel} from '../Filmes/FilmesStyles'
 
 import  "./carrosel.css"
 
 import Seta from "../../assets/Seta.png"
-import { Texto } from '../Main/MainStyles'
+import Filmes from "../Filmes/Filmes"
+import Banner from '../Banner/Banner'
 
 const base_url = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=2"
 const Footer = () => {
@@ -58,12 +59,10 @@ if(!movieData || !movieData.length) return null;
   return (
     <div>
 
-      <ContainerMain style={{height:"50%"}}   id='footer' className='container'   >
+<Banner/>
 
-<BoxTitulo>
+      <ContainerMain   id='footer' className='container'   >
 
-        <Texto> filmes mais assitidos do mês anterior</Texto>
-</BoxTitulo>
 
 
 
@@ -94,19 +93,19 @@ if(!movieData || !movieData.length) return null;
     
 
       <div className=" buttons">
-          <Buttons onClick={handleLeftClick}  > 
+          <ButtonCarrosel onClick={handleLeftClick}  > 
             <img src={Seta}  alt="Scroll Left"/>
-            </Buttons>
+            </ButtonCarrosel>
 
-            <ButtonsSec onClick={handleRightClick} > 
+            <ButtonCarrosel onClick={handleRightClick} > 
 
             <img src={Seta}  alt="Scroll rigth"/>
-            </ButtonsSec>
+            </ButtonCarrosel>
 
      </div>
 
      
-
+         
       </ContainerMain>
       </div>
   )

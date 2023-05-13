@@ -3,14 +3,16 @@ import styled from "styled-components";
 
 export const ContainerMain = styled.main `
 
-background-color:#2c2c2c;
+background: -webkit-linear-gradient(rgb(10, 10, 10), rgb(10, 10, 10));
 
-padding-top:15%;
+padding-top:18%;
 
 display:flex;
 justify-content:center;
 align-items:center;
 flex-wrap:wrap;
+
+
 
 
 
@@ -76,5 +78,13 @@ background-color:transparent ;
 
      
 
+
+`
+
+export const ButtonCarrosel = styled.button `
+
+background-color:white ;
+border:none;
+cursor: pointer;
 
 `

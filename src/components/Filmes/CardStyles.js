@@ -4,26 +4,27 @@ import styled from "styled-components";
 
  export const Containercard = styled.section `
 display:flex;
-justify-content:space-around;
-align-items:center;
+justify-content:center;
 flex-direction:column;
+align-items:center;
+
 flex-wrap:wrap;
-text-align:center;
-
-
-
 
 
 width:25%;
+
+
+
+
 
 padding:10px 20px;
 
 
 
 img{
-    width:85%;
-    border-radius:10%;
-    border: solid 5px yellow;
+    width:75%;
+    
+
    
    
 }
@@ -31,10 +32,10 @@ img{
 `
 
 export const Letrasfilme = styled.h2`
-font-size:1.5em;
+
 padding:3px;
-color:wheat;
-text-align:center;
+color:white;
+
 
 
 
