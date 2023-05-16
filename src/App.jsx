@@ -6,6 +6,7 @@ import Carrosel from "./components/Carrosel/Carrosel"
 
 import Login from "./components/Login/Login"
 import Series from "./components/Series/Series"
+import Home from "./components/Movies/Home"
 
 
 
@@ -23,7 +24,7 @@ function App() {
     <BrowserRouter>
      <NavBar/>
      <Routes>
-      <Route path="/" element={<Carrosel/>}/>
+      <Route path="/" element={<Home/>}/>
       <Route path="/series" element={<Series/>}/>
       <Route path="login" element={<Login/>}/>
      </Routes>

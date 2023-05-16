@@ -3,26 +3,27 @@ import styled from "styled-components";
 
 
  export const Containercard = styled.section `
+
+ 
 display:flex;
 justify-content:center;
 flex-direction:column;
 align-items:center;
 
-flex-wrap:wrap;
-
-
-width:23%;
 
 
 
+width:24vw;
 
 
 padding:10px 30px;
 
 
 
+
+
 img{
-    width:75%;
+    width:85%;
     
 
    
@@ -45,3 +46,14 @@ color:white;
 
 
 `
+
+export const ContainerC = styled.div `
+
+
+
+width:80vw;
+height:50vh;
+padding:10px 20px;
+
+`
+

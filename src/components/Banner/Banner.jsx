@@ -5,8 +5,8 @@ import styled from "styled-components"
 export const MainStyle = styled.main`
     background-image: url(${props => props.back});
     background-repeat:no-repeat;
-    background-size:cover;
-width:100%;
+    background-size:100% 100%;
+
 height:100vh;
     color:white;
 `
@@ -22,7 +22,7 @@ const Banner = () => {
   const [fundo, setFundo] = useState([])
 
   useEffect(() => {
-      getFilmes()
+    
   })
 
   const getFilmes = async () => {
@@ -34,7 +34,7 @@ const Banner = () => {
               }
           })
           setFilmes(allApi)
-          setFundo(arrayAntiga => arrayAntiga = filmes.slice(0,1))
+          setFundo(arrayAntiga => arrayAntiga  = filmes.slice(0,1))
           console.log(fundo)
           
 

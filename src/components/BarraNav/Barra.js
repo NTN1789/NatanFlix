@@ -53,9 +53,3 @@ export const InputSearch = styled.input `
 `
 
 
-
-export const Fundo = styled.div `
-background-color:black;
-
-
-`

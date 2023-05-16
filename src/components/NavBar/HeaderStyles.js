@@ -3,8 +3,11 @@ import styled from 'styled-components';
 
 export const Logo = styled.img `
 background-color:black;
-width:15vh;
-
+min-width:80%;
+height:4vw;
+padding:10px;
+border-radius:15%;
+box-shadow: 0 0 10px #ccc;
 
 `
 

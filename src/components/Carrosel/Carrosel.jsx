@@ -1,136 +1,96 @@
-import React , {useState,useEffect, useRef}from 'react'
-import  { Caixa, Slogan , NavBar, NavList , NavItem} from "./CarroselStyles"
+import React from 'react'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { useState, useEffect } from "react";
 
-import Card from '../Filmes/Card'
-import {  ContainerMain , ButtonCarrosel} from '../Filmes/FilmesStyles'
 
-import  "./carrosel.css"
+import Card from '../Filmes/Card';
+import { Fundo } from './CarroselStyles';
 
-import Seta from "../../assets/Seta.png"
-import Filmes from "../Filmes/Filmes"
-import Banner from '../Banner/Banner'
 
-import Buscar from "../../assets/buscar.png"
-import { Input } from '../NavBar/HeaderStyles'
 
-const base_url = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=2"
-const Footer = () => {
+
+
+
+
+
+
+
+
+const Carrosel = () => {
+
+  const base_url = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=2"
+
+  const responsive = {
+
+  
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 5000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
 
   const [movieData,setMovieData] = useState([])
-const [urlSte,setUrl] = useState(base_url)
+  const [urlSte,setUrl] = useState(base_url)
+  
+  useEffect(() => {
 
-
-
-
-useEffect(() => {
-
-  fetch(urlSte)
-  .then(res => res.json())
-  .then(data => {
-   
-    setMovieData(data.results)
-  })
-} , [urlSte])
-
-
-const carousel = useRef(null)
-
-const  handleLeftClick = (e) => {
-
-  e.preventDefault(carousel.current.offsetWidth); 
-  carousel.current.scrollLeft -= carousel.current.offsetWidth;  
+    fetch(urlSte)
+    .then(res => res.json())
+    .then(data => {
+     
+      setMovieData(data.results)
+    })
+  } , [urlSte])
   
   
-};
-
-
-const  handleRightClick = (e) => {
-
-
-  e.preventDefault(carousel.current.offsetWidth);  
-
-  carousel.current.scrollLeft += carousel.current.offsetWidth;
   
-};
-
-
-
-
-
-if(!movieData || !movieData.length) return null;
-
+  
   return (
     <div>
 
-<Banner/>
+<Carousel  responsive={responsive}  infinite={true}  autoPlay={2000}   >
 
-      <ContainerMain   id='footer' className='container'   >
-      <NavBar>
-            <NavList>
-                <NavItem>Popular</NavItem>
-                <NavItem>Drama</NavItem>
-                <NavItem>Ação</NavItem>
-                <NavItem>Aventura</NavItem>
-                <NavItem>Comédia</NavItem>
-                <NavItem>Crime</NavItem>
-                <NavItem>Fantasia</NavItem>
-                <NavItem>Família</NavItem>
-      
-            </NavList>
-            <Input type="text" /> 
-         <img src={Buscar}  alt="Buscar"/>
-            
-        </NavBar>
-        <Caixa>
-
-<Slogan>últimos Lançamentos</Slogan>
-        </Caixa>
-
-
-
-     <div className='carousel'  ref={carousel}>  
-
-     {
+{
+    (movieData.length === 0 ) ? <p>not found</p> : movieData.map((res,id) =>{
+      return(
+         <>
        
-       (movieData.length === 0 ) ? <p>not found</p> : movieData.map((res,id) =>{
-         return(
-            <>
-            <div className='item'>
-              <div className='image'>
-            
-            <Card   informacao={res} key={id} />
-              </div>
-            </div>
-           
-            </>
-          )
-          
-        })
         
-        
-        
-      }
-     
-      </div>
+
+<Fundo>
+
     
-
-      <div className=" buttons">
-          <ButtonCarrosel onClick={handleLeftClick}  > 
-            <img src={Seta}  alt="Scroll Left"/>
-            </ButtonCarrosel>
-
-            <ButtonCarrosel onClick={handleRightClick} > 
-
-            <img src={Seta}  alt="Scroll rigth"/>
-            </ButtonCarrosel>
-
-     </div>
-
-     <Filmes/>
          
-      </ContainerMain>
-      </div>
+        <Card  informacao={res} key={id} />
+
+</Fundo>
+         
+    
+     
+        
+         </>
+       )
+       
+     })
+    
+  }
+</Carousel>
+</div>
   )
 }
 
-export default Footer
+export default Carrosel
