@@ -1,6 +1,9 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
 import { api } from './api';
+import List from './List';
+
+
 
 
  const Paginacao = () => {
@@ -33,8 +36,11 @@ import { api } from './api';
 
   return (
     <>
-    <h2  style={{color:'red',fontSize:'20px',border:'1px solid red',padding:'10px',textAlign:'center',width:'100%'}}>olá teste</h2>
-    
+ 
+    <List data={data}  
+    fetchNextPage={(url) => fetchNextPage(url)}
+    fetchPreviousPage={(url) => fetchPreviousPage(url)}
+  />
     </>
   )
 }

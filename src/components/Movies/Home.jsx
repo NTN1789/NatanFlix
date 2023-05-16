@@ -2,8 +2,9 @@ import React from 'react'
 import Banner from '../Banner/Banner'
 import Filmes from "../Filmes/Filmes"
 import Carrosel from '../Carrosel/Carrosel'
-import Paginacao from '../paginacao/Paginacao'
+
 import Navegacao from '../BarraNav/Navegacao'
+import App from '../paginacao'
 
 const Home = () => {
   return (
@@ -12,7 +13,8 @@ const Home = () => {
     <Navegacao/>
     <Carrosel/>
     <Filmes/>
-    <Paginacao/>
+  
+    
 
     
     </>
