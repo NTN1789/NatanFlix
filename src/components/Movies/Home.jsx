@@ -4,7 +4,7 @@ import Filmes from "../Filmes/Filmes"
 import Carrosel from '../Carrosel/Carrosel'
 
 import Navegacao from '../BarraNav/Navegacao'
-import App from '../paginacao'
+
 
 const Home = () => {
   return (

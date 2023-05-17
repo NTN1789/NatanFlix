@@ -2,9 +2,9 @@ import React from 'react'
 import  { useState } from 'react';
 
 export const List = ({
-    pagination,
-    fetchNextPage,
-    fetchPreviousPage,
+  //  pagination,
+  //  fetchNextPage,
+   // fetchPreviousPage,
   }) => {
     const [currentPage, setCurrentPage] = useState(1);
   

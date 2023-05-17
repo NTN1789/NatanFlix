@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Card from "../Filmes/Card";
 import { ContainerC } from "../Filmes/CardStyles";
 
-const base_url = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=2"
+const base_url = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=5"
 const Series = () => {
   const responsive = {
 
