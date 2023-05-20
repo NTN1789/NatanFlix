@@ -3,8 +3,7 @@ import "react-multi-carousel/lib/styles.css";
 import { useState, useEffect } from "react";
 import Card from "../Filmes/Card";
 import { Fundo } from "../Carrosel/CarroselStyles";
-import Banner from "../Banner/Banner";
-import Filmes from "../Filmes/Filmes";
+
 import Navegacao from "../BarraNav/Navegacao";
 import { GlobalStyle } from "../../styles/Global";
 import { ContainerMain } from "../Filmes/FilmesStyles";
@@ -12,7 +11,7 @@ import BannerSeries from "../Banner/BannerSeries";
 
 const base_url = "https://api.themoviedb.org/3/tv/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=5"
 
-const series = "https://api.themoviedb.org/3/tv/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=1"
+const series = "https://api.themoviedb.org/3/tv/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=4"
 const Series = () => {
   const responsive = {
 
@@ -87,6 +86,7 @@ useEffect(() => {
 
 
 <Navegacao/>
+
 
 
   <Carousel  responsive={responsive}  infinite={true}  autoPlay={2000}   >

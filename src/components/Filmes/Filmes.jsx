@@ -16,9 +16,9 @@ import { Caixa, Slogan  } from '../Carrosel/CarroselStyles'
 
 const Main = () => {
   
-  const base_url = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=1"
+  const baseUrl = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=1"
 const [movieData,setMovieData] = useState([])
-const [urlSte,setUrl] = useState(base_url)
+const [urlSte,setUrl] = useState(baseUrl)
 
 
 
