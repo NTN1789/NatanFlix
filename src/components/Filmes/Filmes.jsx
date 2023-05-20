@@ -13,6 +13,7 @@ import { Caixa, Slogan  } from '../Carrosel/CarroselStyles'
 
 
 
+
 const Main = () => {
   
   const base_url = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=1"
@@ -50,7 +51,7 @@ useEffect(() => {
           return(
             <>  
             <Card informacao={res} key={id} />
-           
+        
             </>
           )
 

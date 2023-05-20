@@ -2,9 +2,17 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useState, useEffect } from "react";
 import Card from "../Filmes/Card";
-import { ContainerC } from "../Filmes/CardStyles";
+import { Fundo } from "../Carrosel/CarroselStyles";
+import Banner from "../Banner/Banner";
+import Filmes from "../Filmes/Filmes";
+import Navegacao from "../BarraNav/Navegacao";
+import { GlobalStyle } from "../../styles/Global";
+import { ContainerMain } from "../Filmes/FilmesStyles";
+import BannerSeries from "../Banner/BannerSeries";
 
-const base_url = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=5"
+const base_url = "https://api.themoviedb.org/3/tv/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=5"
+
+const series = "https://api.themoviedb.org/3/tv/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=1"
 const Series = () => {
   const responsive = {
 
@@ -27,6 +35,29 @@ const Series = () => {
       items: 1
     }
   };
+
+ 
+const [seriesData,setSeriesData] = useState([])
+const [url,setUrlSeries] = useState(series)
+
+
+
+
+useEffect(() => {
+
+  fetch(url)
+  .then(res => res.json())
+  .then(data => {
+   
+    setSeriesData(data.results)
+  })
+} , [url])
+
+
+
+
+
+
   
   const [movieData,setMovieData] = useState([])
 const [urlSte,setUrl] = useState(base_url)
@@ -51,6 +82,11 @@ useEffect(() => {
 
   return (
     <div>
+<GlobalStyle/>
+<BannerSeries/>
+
+
+<Navegacao/>
 
 
   <Carousel  responsive={responsive}  infinite={true}  autoPlay={2000}   >
@@ -59,14 +95,41 @@ useEffect(() => {
     (movieData.length === 0 ) ? <p>not found</p> : movieData.map((res,id) =>{
       return(
          <>
-        <ContainerC>
+        <Fundo>
         
 
     
          
          <Card    informacao={res} key={id} />
+        
          
-        </ContainerC>
+        </Fundo>
+     
+        
+         </>
+       )
+       
+     })
+     
+    }
+
+
+  </Carousel>
+  <ContainerMain>
+
+  {
+    (seriesData.length === 0 ) ? <p>not found</p> : seriesData.map((res,id) =>{
+      return(
+        <>
+      
+        
+    
+
+    
+         
+         <Card    informacao={res} key={id} />
+        
+  
      
         
          </>
@@ -76,9 +139,8 @@ useEffect(() => {
     
   }
 
- 
-  </Carousel>
-
+  
+      </ContainerMain>
     </div>
   )
 }

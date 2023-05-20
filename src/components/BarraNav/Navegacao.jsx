@@ -3,11 +3,13 @@ import { NavBar, NavList, NavItem, Caixa, Slogan }  from "./Barra"
 import Buscar from "../../assets/buscar.png"
 import { Input } from '../NavBar/HeaderStyles'
 import { ContainerMain } from '../Filmes/FilmesStyles'
+import { GlobalStyle } from '../../styles/Global'
 
 export default function Navegacao() {
   return (
 <>
-<ContainerMain  style={{marginTop:"0%"}}  > 
+<ContainerMain   > 
+<GlobalStyle/>
 
     <NavBar>
 <NavList>

@@ -1,27 +1,27 @@
 import React , { useState,useEffect } from "react";
-import categories, { getMovies } from "./api";
+import categories, { getSeries} from "./api";
 import {} from "./BannerStyles"
 
 
-function Banner() {
+function BannerSeries() {
   const [movie, setMovie] = useState({});
 
-  const fetchRandomMovie = async () => {
+  const fetchRandomSeries = async () => {
     try {
       const netflixOriginalsCategory = categories.find(
         (category) => category.name === "netflixOriginals"
       );
-      const data = await getMovies(netflixOriginalsCategory.path);
+      const data = await getSeries(netflixOriginalsCategory.path);
       const movies = data?.results;
       const randomIndex = Math.floor(Math.random() * movies.length);
       setMovie(movies[randomIndex]);
     } catch (error) {
-      console.log("Banner fetchRandomMovie error: ", error);
+      console.log("Banner fetchRandomSeries error: ", error);
     }
   };
 
   useEffect(() => {
-    fetchRandomMovie();
+    fetchRandomSeries();
   }, []);
 
   function truncate(str, n) {
@@ -58,4 +58,4 @@ function Banner() {
   );
 }
 
-export default Banner;
+export default BannerSeries;

@@ -55,7 +55,8 @@ export const InputSearch = styled.input `
 
 
 export const Fundo = styled.div `
-background-color:black;
+background: -webkit-linear-gradient(rgb(10, 10, 10), rgb(10, 10, 10));
+width:70vw;
 
 
 `

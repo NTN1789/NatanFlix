@@ -3,7 +3,6 @@ import React from 'react'
 import {Logo,Container, UL,Boxes, Input } from "./HeaderStyles"
 
 
-
 import Dell from "../../assets/Dell.png"
 import Buscar from "../../assets/buscar.png"
 
@@ -38,6 +37,7 @@ const Header = () => {
         </UL>
 
         <Boxes>
+
 
         <Input type="text" placeholder="Buscar" />
 <img src={Buscar} alt="" /> 

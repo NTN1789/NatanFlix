@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 import Card from '../Filmes/Card';
 import { Fundo } from './CarroselStyles';
+import { GlobalStyle } from '../../styles/Global';
 
 
 
@@ -19,7 +20,7 @@ import { Fundo } from './CarroselStyles';
 
 const Carrosel = () => {
 
-  const base_url = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=2"
+  const url = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=2"
 
   const responsive = {
 
@@ -44,7 +45,7 @@ const Carrosel = () => {
   };
 
   const [movieData,setMovieData] = useState([])
-  const [urlSte,setUrl] = useState(base_url)
+  const [urlSte,setUrl] = useState(url)
   
   useEffect(() => {
 
@@ -61,7 +62,7 @@ const Carrosel = () => {
   
   return (
     <div>
-
+<GlobalStyle/>
 <Carousel  responsive={responsive}  infinite={true}  autoPlay={2000}   >
 
 {

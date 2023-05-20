@@ -24,9 +24,9 @@ padding:10px 30px;
 
 img{
     width:85%;
-    
+    cursor:pointer;
 
-   
+
    
 }
 

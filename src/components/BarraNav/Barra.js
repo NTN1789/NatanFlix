@@ -5,7 +5,7 @@ display:flex;
 justify-content:flex-start;
 align-items:center;
 width:87%;
-height:6.5vh;
+height:8.5vh;
 
 
 `
@@ -21,10 +21,11 @@ font-family: normal normal bold ;
 
 
 export const NavBar = styled.nav`   
-    height: 15vh;
+    height: 20vh;
     display: flex;
     align-items: center;
-    width:75%;
+    width:78%;
+    background: -webkit-linear-gradient(rgb(10, 10, 10), rgb(10, 10, 10));
  
    
  
@@ -43,8 +44,8 @@ export const NavItem = styled.li`
 `
 
 export const InputSearch = styled.input `
-    width: 20%;
-    height: 3vh;
+    width: 40%;
+    height: 5vh;
     border-radius: 5px;
 
 
