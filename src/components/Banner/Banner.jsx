@@ -1,6 +1,7 @@
 import React , { useState,useEffect } from "react";
 import categories, { getMovies } from "./api";
-import {} from "./BannerStyles"
+import {FaStar} from "react-icons/fa"
+import { BoxButton, BoxTilte, OverviewMovies, TilteMovies, VoteMovies } from "./BannerStyles"
 
 
 function Banner() {
@@ -41,19 +42,27 @@ function Banner() {
       display:"flex",
       }}
     >
-      <div >
-        <h1>
+      <BoxTilte >
+        <TilteMovies>
           {movie?.title || movie?.name || movie?.original_name}
-        </h1>
-        <div >
+        </TilteMovies>
+        <BoxButton >
           <button >Assistir</button>
+          
           <button >Minha Lista</button>
-        </div>
+        </BoxButton>
         <div >
-          <h2>{truncate(movie?.overview)}</h2>
-          <h2>{truncate(movie?.vote_average)}</h2>
+          <OverviewMovies>{truncate(movie?.overview , 250)}</OverviewMovies>
+          <VoteMovies>{truncate(movie?.vote_average)  
+        }
+        {
+            <FaStar style={{color:"yellow"}}/>
+
+        }
+          </VoteMovies>
+    
         </div>
-      </div>
+      </BoxTilte>
     </div>
   );
 }
