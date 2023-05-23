@@ -1,7 +1,9 @@
 import React , { useState,useEffect } from "react";
 import categories, { getMovies } from "./api";
 import {FaStar} from "react-icons/fa"
-import { BoxButton, BoxTilte, OverviewMovies, TilteMovies, VoteMovies } from "./BannerStyles"
+import {AiFillPlayCircle} from "react-icons/ai"
+
+import {  BoxTilte,  OverviewMovies, TilteMovies, VoteMovies } from "./BannerStyles"
 
 
 function Banner() {
@@ -26,7 +28,7 @@ function Banner() {
   }, []);
 
   function truncate(str, n) {
-    return str?.length > n ? str.substring(0, n - 1) + "..." : str;
+    return str?.length > n ? str.substring(0, n - 2) + "..." : str;
   }
 
   return (
@@ -37,30 +39,34 @@ function Banner() {
         backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
         width: "100%",
         backgroundSize: "cover",
-        backgroundPosition: "center center",
-      height: "100vh",
-      display:"flex",
+        backgroundPosition: "center center ",
+        backgroundRepeat: "no-repeat",
+        backgroundColor:"transparent",
+    
+      
+ 
+      height: "50vw",
+     
+  
       }}
     >
       <BoxTilte >
         <TilteMovies>
-          {movie?.title || movie?.name || movie?.original_name}
+        <VoteMovies>{truncate(movie?.vote_average)  
+        }
+        <FaStar style={{color:"yellow"}}/>
+        </VoteMovies>
+      
+          {movie?.title || movie?.name || movie?.original_name || movie?.release_date}
+       
+  
         </TilteMovies>
-        <BoxButton >
-          <button >Assistir</button>
-          
-          <button >Minha Lista</button>
-        </BoxButton>
+ 
         <div >
-          <OverviewMovies>{truncate(movie?.overview , 250)}</OverviewMovies>
-          <VoteMovies>{truncate(movie?.vote_average)  
-        }
-        {
-            <FaStar style={{color:"yellow"}}/>
-
-        }
-          </VoteMovies>
+          <OverviewMovies>{truncate(movie?.overview )}</OverviewMovies>
+          <h1></h1>
     
+  
         </div>
       </BoxTilte>
     </div>

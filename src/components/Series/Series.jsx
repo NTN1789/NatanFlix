@@ -1,13 +1,18 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useState, useEffect } from "react";
-import Card from "../Filmes/Card";
+import CardSeries from "./CardSeries";
 import { Fundo } from "../Carrosel/CarroselStyles";
 
 import Navegacao from "../BarraNav/Navegacao";
 import { GlobalStyle } from "../../styles/Global";
 import { ContainerMain } from "../Filmes/FilmesStyles";
 import BannerSeries from "../Banner/BannerSeries";
+
+import ModalSeries from "./ModalSeries";
+
+
+
 
 const base_url = "https://api.themoviedb.org/3/tv/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=5"
 
@@ -70,6 +75,7 @@ useEffect(() => {
   .then(data => {
    
     setMovieData(data.results)
+
   })
 } , [urlSte])
 
@@ -92,7 +98,8 @@ useEffect(() => {
   <Carousel  responsive={responsive}  infinite={true}  autoPlay={2000}   >
 
   {
-    (movieData.length === 0 ) ? <p>not found</p> : movieData.map((res,id) =>{
+      movieData.map((res,id) =>{
+
       return(
          <>
         <Fundo>
@@ -100,8 +107,10 @@ useEffect(() => {
 
     
          
-         <Card    informacao={res} key={id} />
-        
+         <CardSeries    info={res} key={id}  />
+ 
+     
+    
          
         </Fundo>
      
@@ -118,7 +127,7 @@ useEffect(() => {
   <ContainerMain>
 
   {
-    (seriesData.length === 0 ) ? <p>not found</p> : seriesData.map((res,id) =>{
+    seriesData.map((res,id) =>{
       return(
         <>
       
@@ -127,7 +136,9 @@ useEffect(() => {
 
     
          
-         <Card    informacao={res} key={id} />
+         <CardSeries    info={res} key={id} />
+         <ModalSeries info={res} key={id}  />
+
         
   
      

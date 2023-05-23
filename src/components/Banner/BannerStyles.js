@@ -6,7 +6,9 @@ export const BoxTilte = styled.div `
 display:flex;
 justify-content:flex-end;
 flex-direction:column;
-width:50%;
+width:60%;
+height:40vw;
+padding-left:2rem;
 
 
 
@@ -16,43 +18,37 @@ width:50%;
 `
 
 export const TilteMovies = styled.h2`
-color:yellow;
+color:white;
 letter-spacing:2px;
-font-size:2.5rem;
-padding-left:2rem;
-
+font-size:3.5rem;
+background-color:transparent;
+overflow:hidden;
 
 
 `
 
 export const OverviewMovies = styled.h2`
-color:yellow;
-padding-left:2rem;
-padding-top:1.5rem;
-font-size:2.5rem;
+color:white;
 
+
+font-size:1.5rem;
+background-color:transparent;
 
 
 `
 
 export const VoteMovies = styled.h2`
-color:yellow;
+color:white;
 padding-left:2rem;
-font-size:2.5rem;
+font-size:3.5rem;
+background-color:transparent;
 
 
 
 `
 
-export const BoxButton = styled.div `
-display:flex;
-justify-content:space-around;
-width:30vh;
-position:relative;
-left:5rem;
-top:-7rem;
 
 
 
 
-`
+

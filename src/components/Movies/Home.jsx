@@ -4,6 +4,7 @@ import Filmes from "../Filmes/Filmes"
 import Carrosel from '../Carrosel/Carrosel'
 
 import Navegacao from '../BarraNav/Navegacao'
+import Pagination from '../Pagination/Pagination'
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
     <Navegacao/>
     <Carrosel/>
     <Filmes/>
+    <Pagination/>
   
     
 

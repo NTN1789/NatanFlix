@@ -1,10 +1,11 @@
 import React , { useState,useEffect } from "react";
 import categories, { getSeries} from "./api";
-import {} from "./BannerStyles"
+import { BoxTilte, OverviewMovies, TilteMovies, VoteMovies } from "./BannerStyles"
+import { FaStar } from "react-icons/fa";
 
 
 function BannerSeries() {
-  const [movie, setMovie] = useState({});
+  const [serie, setMovie] = useState({});
 
   const fetchRandomSeries = async () => {
     try {
@@ -33,27 +34,34 @@ function BannerSeries() {
   
       style={{
   
-        backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
+        backgroundImage: `url("https://image.tmdb.org/t/p/original/${serie?.backdrop_path}")`,
         width: "100%",
         backgroundSize: "cover",
-        backgroundPosition: "center center",
-      height: "100vh",
-      display:"flex",
+        backgroundPosition: "center ",
+        backgroundRepeat: "no-repeat",
+        backgroundColor:"transparent",
+     
+   
+      height: "80vh",
+   
       }}
     >
-      <div >
-        <h1>
-          {movie?.title || movie?.name || movie?.original_name}
-        </h1>
+      <BoxTilte >
+        <TilteMovies>
+         
+          <VoteMovies>
+        {truncate(serie?.vote_average)}
+            <FaStar style={{color:"yellow"}}  />
+          </VoteMovies>
+          {serie?.title || serie?.name }
+        </TilteMovies>
+      
         <div >
-          <button >Assistir</button>
-          <button >Minha Lista</button>
+          <OverviewMovies>{serie.overview}</OverviewMovies>
+         
+          
         </div>
-        <div >
-          <h2>{truncate(movie?.overview)}</h2>
-          <h2>{truncate(movie?.vote_average)}</h2>
-        </div>
-      </div>
+      </BoxTilte>
     </div>
   );
 }

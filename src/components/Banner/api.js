@@ -5,8 +5,8 @@ const categories = [
   {
     name: "netflixOriginals",
     title: "Originais Netflix",
-    path: `/tv?api_key=${API_KEY}`,
-    isLarge: false,
+    path: `?api_key=${API_KEY}&with_networks=213`,
+
   },
 
 

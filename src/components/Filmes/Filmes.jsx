@@ -3,6 +3,7 @@ import {  ContainerMain,  } from "./FilmesStyles"
 import Card from './Card'
 import { GlobalStyle } from '../../styles/Global'
 import { Caixa, Slogan  } from '../Carrosel/CarroselStyles'
+import Modal from '../Modal/Modal'
 
 
 
@@ -30,7 +31,9 @@ useEffect(() => {
   .then(data => {
    
     setMovieData(data.results)
-  })
+
+  }
+  )
 } , [urlSte])
 
 
@@ -51,12 +54,14 @@ useEffect(() => {
           return(
             <>  
             <Card informacao={res} key={id} />
-        
+           
+
+            <Modal informacao={res} key={id} />
             </>
           )
-
+          
         })
-    }  
+      }  
       </ContainerMain>
   )
 }
