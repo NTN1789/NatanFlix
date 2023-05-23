@@ -4,6 +4,7 @@ import Card from './Card'
 import { GlobalStyle } from '../../styles/Global'
 import { Caixa, Slogan  } from '../Carrosel/CarroselStyles'
 import Modal from '../Modal/Modal'
+import { ButtonPage, ContainerPage } from '../Pagination/page.Styles'
 
 
 
@@ -17,9 +18,10 @@ import Modal from '../Modal/Modal'
 
 const Main = () => {
   
-  const baseUrl = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page=1"
+  const baseUrl = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page" 
 const [movieData,setMovieData] = useState([])
 const [urlSte,setUrl] = useState(baseUrl)
+const [index, setIndex] = useState(0)
 
 
 
@@ -52,16 +54,20 @@ useEffect(() => {
         
         (movieData.length === 0 ) ? <p>not found</p> : movieData.map((res,id) =>{
           return(
-            <>  
+            <>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>  
             <Card informacao={res} key={id} />
            
 
             <Modal informacao={res} key={id} />
+            </div>
             </>
           )
           
         })
       }  
+
+
       </ContainerMain>
   )
 }

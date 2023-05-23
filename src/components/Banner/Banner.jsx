@@ -3,7 +3,7 @@ import categories, { getMovies } from "./api";
 import {FaStar} from "react-icons/fa"
 import {AiFillPlayCircle} from "react-icons/ai"
 
-import {  BoxTilte,  OverviewMovies, TilteMovies, VoteMovies } from "./BannerStyles"
+import {  BoxTilte,  ButtonMovies,  OverviewMovies, TilteMovies, VoteMovies } from "./BannerStyles"
 
 
 function Banner() {
@@ -64,8 +64,21 @@ function Banner() {
  
         <div >
           <OverviewMovies>{truncate(movie?.overview )}</OverviewMovies>
-          <h1></h1>
-    
+          <ButtonMovies>
+                        <span>
+                        <i className="fa-solid fa-play"></i>
+                          
+                          Assistir agora
+                        </span>
+                  
+                          
+                        <span>
+                        <i className="fa-solid fa-film"></i>
+                          Trailer
+
+                        </span>
+                 
+    </ButtonMovies>
   
         </div>
       </BoxTilte>

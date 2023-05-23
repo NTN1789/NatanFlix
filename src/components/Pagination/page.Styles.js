@@ -4,16 +4,20 @@ export const  ContainerPage = styled.div`
     display: flex;
     justify-content:center;
     align-items:center;
-    background-color:black;
+
     `
 
     export const ButtonPage = styled.button` 
     display: flex;
     justify-content:space-around;
     width:30vh;
-  height:2vw;
+  height:4vw;
     align-items:center;
-    background-color:black;
+    background: -webkit-linear-gradient(rgb(10, 10, 10), rgb(10, 10, 10));
+
+    &{
+      cursor: pointer;
+    }
 
 
    

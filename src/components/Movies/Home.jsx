@@ -14,7 +14,7 @@ const Home = () => {
     <Navegacao/>
     <Carrosel/>
     <Filmes/>
-    <Pagination/>
+   <Pagination/> 
   
     
 

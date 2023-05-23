@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Modal from "react-modal"
+import {ButtonFechar,ContainerModal,ImageFilmes,Informacao} from "../Modal/ModalStyles"
 
-import "./ModalSeries.css"
+
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
 function modal(series, id) {
-  const img_path= "https://image.tmdb.org/t/p/w500/"
+  const img_path= "https://image.tmdb.org/t/p/original/"
 
  
   
@@ -26,37 +27,35 @@ console.log(series.info)
   
 
   return (
-    <div className="Container">
+    <ContainerModal>
       <button onClick={openModal}>Open Modal</button>
       <Modal
         key={id}
       
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        contentLabel="Example Modal"
-        overlayClassName="modal-overlay"
-        className="modal-content"
+
       >
        
-   <button onClick={closeModal}>X</button>
+   <ButtonFechar onClick={closeModal}>X</ButtonFechar>
 
-   <h1>     {series.info.name} </h1>
-        {
-         <img src={img_path + series.info.backdrop_path} />
-        }
-      
-      <h4>
+ 
+       
+         <ImageFilmes src={img_path + series.info.backdrop_path} />
+     
+        <Informacao style={{color:"black",fontSize:"50px",fontWeight:"bold"}}>     {series.info.name} </Informacao>
+      <Informacao>
           {series.info.overview}
-        </h4>
-        <h4>{series.info.vote_average}</h4>
+        </Informacao>
+        <Informacao>{series.info.vote_average}</Informacao>
          
 
-         <h4>{"Data de lançamento: " + series.info.first_air_date.slice(0,4)}</h4>
+         <Informacao>{"Data de lançamento: " + series.info.first_air_date.slice(0,4)}</Informacao>
 
 
       
       </Modal>
-    </div>
+    </ContainerModal>
   );
 }
 

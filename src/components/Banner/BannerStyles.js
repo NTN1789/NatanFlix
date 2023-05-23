@@ -48,6 +48,37 @@ background-color:transparent;
 `
 
 
+export const ButtonMovies = styled.div`
+display:flex;
+
+padding:10px 30px;
+align-items:center;
+
+
+
+span{
+    border-radius:100px;
+    padding:10px 50px;
+  
+    background-color:gray;
+
+    background-color:gray;
+    &{
+            cursor: pointer;
+        }
+
+
+}
+i{          
+        font-size:1.4rem;
+        padding:5px 5px;
+        color:white;
+
+     
+      
+    }
+` 
+
 
 
 

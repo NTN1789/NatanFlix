@@ -1,6 +1,6 @@
 import React , { useState,useEffect } from "react";
 import categories, { getSeries} from "./api";
-import { BoxTilte, OverviewMovies, TilteMovies, VoteMovies } from "./BannerStyles"
+import { BoxTilte, ButtonMovies, OverviewMovies, TilteMovies, VoteMovies } from "./BannerStyles"
 import { FaStar } from "react-icons/fa";
 
 
@@ -42,7 +42,7 @@ function BannerSeries() {
         backgroundColor:"transparent",
      
    
-      height: "80vh",
+      height: "95vh",
    
       }}
     >
@@ -58,7 +58,23 @@ function BannerSeries() {
       
         <div >
           <OverviewMovies>{serie.overview}</OverviewMovies>
-         
+        
+         <ButtonMovies>
+                        <span>
+                        <i className="fa-solid fa-play"></i>
+                          
+                          Assistir agora
+                        </span>
+                  
+                          
+                        <span>
+                        <i className="fa-solid fa-film"></i>
+                          Trailer
+
+                        </span>
+                 
+    </ButtonMovies>
+      
           
         </div>
       </BoxTilte>

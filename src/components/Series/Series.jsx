@@ -10,6 +10,7 @@ import { ContainerMain } from "../Filmes/FilmesStyles";
 import BannerSeries from "../Banner/BannerSeries";
 
 import ModalSeries from "./ModalSeries";
+import Pagination from "../Pagination/Pagination"
 
 
 
@@ -131,7 +132,7 @@ useEffect(() => {
       return(
         <>
       
-        
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
     
 
     
@@ -139,6 +140,7 @@ useEffect(() => {
          <CardSeries    info={res} key={id} />
          <ModalSeries info={res} key={id}  />
 
+         </div>
         
   
      
@@ -150,7 +152,7 @@ useEffect(() => {
     
   }
 
-  
+  <Pagination/>
       </ContainerMain>
     </div>
   )

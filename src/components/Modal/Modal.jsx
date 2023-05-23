@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import Modal from "react-modal"
+import {ButtonFechar, ContainerModal, ImageFilmes, Informacao} from "./ModalStyles"
+import { FaStar } from "react-icons/fa";
 
-import "./Modal.css"
-// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
 function modal(movie, id) {
-  const img_path= "https://image.tmdb.org/t/p/w500/"
+  const img_path= "https://image.tmdb.org/t/p/original/"
 
- 
-  
-console.log(movie.informacao)
+
+  const genrs =   `https://api.themoviedb.org/3/genre/movie/list?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-BR${movie.informacao.id}  `
+
+
+
+
+
+
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -26,38 +31,43 @@ console.log(movie.informacao)
   
 
   return (
-    <div className="Container">
-      <button onClick={openModal}>Open Modal</button>
+    <ContainerModal>
+      <button onClick={openModal}><i  style={{color: "red" , fontSize: "20px"}} className="fa-light fa-info"></i></button>
       <Modal
         key={id}
       
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        contentLabel="Example Modal"
-        overlayClassName="modal-overlay"
-        className="modal-content"
+     
+      
       >
        
-   <button onClick={closeModal}>X</button>
+   <ButtonFechar onClick={closeModal}>X</ButtonFechar>
 
-   <h1>     {movie.informacao.title } </h1>
+   <Informacao key={id}>     {movie.informacao.title } </Informacao>
         {
-         <img src={img_path + movie.informacao.backdrop_path} />
+         <ImageFilmes key={id} src={img_path + movie.informacao.backdrop_path} />
         }
       
-      <h4>
+      <Informacao>
           {movie.informacao.overview}
-        </h4>
-        <h4>{movie.informacao.vote_average}</h4>
+        </Informacao>
+        <Informacao>{movie.informacao.vote_average}
+        <FaStar style={{color: "gold"}} size={20} />
+        </Informacao>
+ 
          
 
-         <h4>{"Data de lançamento: " + movie.informacao.release_date.slice(0,4)}</h4>
-     <h4>{"Idioma original: " + movie.informacao.original_language}</h4>
-     <h4>{"Idioma original: " + movie.informacao.original_title}</h4>
+         <Informacao>{`Data de lançamento:  ${ movie.informacao.release_date.slice(0,4)}`}</Informacao>
+     <Informacao>{`Idioma original: ${ movie.informacao.original_language}`}</Informacao>
+     <Informacao>{`titulo original:  ${ movie.informacao.original_title} `}</Informacao>
+     <Informacao>{`Genero:  ${movie.informacao.id.genres} `}</Informacao>
+  
 
+   
       
       </Modal>
-    </div>
+    </ContainerModal>
   );
 }
 
