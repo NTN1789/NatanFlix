@@ -10,6 +10,12 @@ width:60%;
 height:40vw;
 padding-left:2rem;
 
+@media screen and (max-width:768px){
+width:100vh;
+    
+
+  }
+
 
 
 
@@ -19,10 +25,16 @@ padding-left:2rem;
 
 export const TilteMovies = styled.h2`
 color:white;
-letter-spacing:2px;
+
 font-size:3.5rem;
 background-color:transparent;
 overflow:hidden;
+
+@media screen and (max-width:768px){
+    font-size:1.2rem;
+    position:relative;
+    top:40px;
+  }
 
 
 `
@@ -32,7 +44,11 @@ color:white;
 
 
 font-size:1.5rem;
+flex-wrap:wrap;
 background-color:transparent;
+@media screen and (max-width:768px){
+display:none
+  }
 
 
 `
@@ -42,6 +58,9 @@ color:white;
 padding-left:2rem;
 font-size:3.5rem;
 background-color:transparent;
+@media screen and (max-width:768px){
+    font-size:2.5rem;
+  }
 
 
 
@@ -53,6 +72,15 @@ display:flex;
 
 padding:10px 30px;
 align-items:center;
+@media screen and (max-width:768px){
+    position:relative;
+    top:30px;
+    right:74px;
+   
+    
+    height:9vh;
+    font-size:1.0rem;
+  }
 
 
 
@@ -66,6 +94,11 @@ span{
     &{
             cursor: pointer;
         }
+        @media screen and (max-width:768px){
+    font-size:1.0rem;
+    padding:0px 40px;
+    
+  }
 
 
 }
@@ -73,7 +106,9 @@ i{
         font-size:1.4rem;
         padding:5px 5px;
         color:white;
-
+        @media screen and (max-width:768px){
+    font-size:1.1rem;
+  }
      
       
     }

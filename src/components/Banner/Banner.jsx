@@ -1,9 +1,9 @@
-import React , { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import categories, { getMovies } from "./api";
-import {FaStar} from "react-icons/fa"
-import {AiFillPlayCircle} from "react-icons/ai"
+import { FaStar } from "react-icons/fa"
+import { AiFillPlayCircle } from "react-icons/ai"
 
-import {  BoxTilte,  ButtonMovies,  OverviewMovies, TilteMovies, VoteMovies } from "./BannerStyles"
+import { BoxTilte, ButtonMovies, OverviewMovies, TilteMovies, VoteMovies } from "./BannerStyles"
 
 
 function Banner() {
@@ -33,53 +33,36 @@ function Banner() {
 
   return (
     <div
-  
-      style={{
-  
+ style={{
         backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
         width: "100%",
         backgroundSize: "cover",
         backgroundPosition: "center center ",
         backgroundRepeat: "no-repeat",
-        backgroundColor:"transparent",
     
-      
- 
-      height: "50vw",
-     
-  
+        height: "50vw",
       }}
     >
       <BoxTilte >
         <TilteMovies>
-        <VoteMovies>{truncate(movie?.vote_average)  
-        }
-        <FaStar style={{color:"yellow"}}/>
-        </VoteMovies>
-      
+          <VoteMovies>{truncate(movie?.vote_average)
+          }
+            <FaStar style={{ color: "yellow" }} />
+          </VoteMovies>
           {movie?.title || movie?.name || movie?.original_name || movie?.release_date}
-       
-  
         </TilteMovies>
- 
         <div >
-          <OverviewMovies>{truncate(movie?.overview )}</OverviewMovies>
+          <OverviewMovies>{truncate(movie?.overview)}</OverviewMovies>
           <ButtonMovies>
-                        <span>
-                        <i className="fa-solid fa-play"></i>
-                          
-                          Assistir agora
-                        </span>
-                  
-                          
-                        <span>
-                        <i className="fa-solid fa-film"></i>
-                          Trailer
-
-                        </span>
-                 
-    </ButtonMovies>
-  
+            <span style={{ backgroundColor: "red" }}>
+              <i className="fa-solid fa-play"></i>
+              Assistir agora
+            </span>
+            <span>
+              <i className="fa-solid fa-film"></i>
+              Trailer
+            </span>
+          </ButtonMovies>
         </div>
       </BoxTilte>
     </div>

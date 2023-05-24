@@ -21,7 +21,7 @@ const series = "https://api.themoviedb.org/3/tv/popular?api_key=971f03eef96c481f
 const Series = () => {
   const responsive = {
 
-  
+
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 5000, min: 3000 },
@@ -41,118 +41,74 @@ const Series = () => {
     }
   };
 
- 
-const [seriesData,setSeriesData] = useState([])
-const [url,setUrlSeries] = useState(series)
 
+  const [seriesData, setSeriesData] = useState([])
+  const [url, setUrlSeries] = useState(series)
 
+  const [movieData, setMovieData] = useState([])
+  const [urlSte, setUrl] = useState(base_url)
 
+  useEffect(() => {
 
-useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
 
-  fetch(url)
-  .then(res => res.json())
-  .then(data => {
-   
-    setSeriesData(data.results)
-  })
-} , [url])
+        setSeriesData(data.results)
+      })
+  }, [url])
 
+  useEffect(() => {
 
+    fetch(urlSte)
+      .then(res => res.json())
+      .then(data => {
 
+        setMovieData(data.results)
 
-
-
-  
-  const [movieData,setMovieData] = useState([])
-const [urlSte,setUrl] = useState(base_url)
-
-
-
-useEffect(() => {
-
-  fetch(urlSte)
-  .then(res => res.json())
-  .then(data => {
-   
-    setMovieData(data.results)
-
-  })
-} , [urlSte])
-
-
-
-
-
-
+      })
+  }, [urlSte])
 
   return (
     <div>
-<GlobalStyle/>
-<BannerSeries/>
+      <GlobalStyle />
+      <BannerSeries />
+      <Navegacao />
 
 
-<Navegacao/>
+      <Carousel responsive={responsive} infinite={true} autoPlay={2000}   >
 
+        {
+          movieData.map((res, id) => {
 
+            return (
+              <>
+                <Fundo>
+                  <CardSeries info={res} key={id} />
+                </Fundo>
+              </>
+            )
 
-  <Carousel  responsive={responsive}  infinite={true}  autoPlay={2000}   >
+          })
 
-  {
-      movieData.map((res,id) =>{
+        }
+      </Carousel>
+      <ContainerMain>
+        {
+          seriesData.map((res, id) => {
+            return (
+              <>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 
-      return(
-         <>
-        <Fundo>
-        
+                  <CardSeries info={res} key={id} />
+                  <ModalSeries info={res} key={id} />
 
-    
-         
-         <CardSeries    info={res} key={id}  />
- 
-     
-    
-         
-        </Fundo>
-     
-        
-         </>
-       )
-       
-     })
-     
-    }
-
-
-  </Carousel>
-  <ContainerMain>
-
-  {
-    seriesData.map((res,id) =>{
-      return(
-        <>
-      
-      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-    
-
-    
-         
-         <CardSeries    info={res} key={id} />
-         <ModalSeries info={res} key={id}  />
-
-         </div>
-        
-  
-     
-        
-         </>
-       )
-       
-     })
-    
-  }
-
-  <Pagination/>
+                </div>
+              </>
+            )
+          })
+        }
+        <Pagination />
       </ContainerMain>
     </div>
   )

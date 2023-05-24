@@ -4,20 +4,19 @@ import { ButtonPage, ContainerPage } from './page.Styles'
 const Pagination = () => {
   return (
     <>
-    <ContainerPage>
-    <ButtonPage>
+      <ContainerPage>
+        <ButtonPage>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+        </ButtonPage>
+      </ContainerPage>
 
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-    </ButtonPage>
-    </ContainerPage>
-    
     </>
 
 
-    
+
   )
 }
 

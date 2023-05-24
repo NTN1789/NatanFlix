@@ -4,8 +4,19 @@ export const Caixa = styled.section `
 display:flex;
 justify-content:flex-start;
 align-items:center;
+
 width:87%;
 height:8.5vh;
+
+
+@media screen and (max-width:768px){
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    
+  }
+
 
 
 `
@@ -15,6 +26,15 @@ color:white;
 font-family: normal normal bold ;
     font-size: 2rem;
     font-weight:bold;
+
+    @media screen and (max-width:768px){
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    
+  }
+
     
     `
 
@@ -24,23 +44,60 @@ export const NavBar = styled.nav`
     height: 20vh;
     display: flex;
     align-items: center;
-    width:78%;
+
+    width:80%;
     background: -webkit-linear-gradient(rgb(10, 10, 10), rgb(10, 10, 10));
  
-   
+    @media screen and (max-width:768px){
+    display: flex;
+    justify-content:center;
+    align-items:center;
+  
+    width:100%;
+    height : 25vh;
+    
+
+
+    }
+
+    
+  
+
  
 `
 export const NavList = styled.ul`
     width: 100%;
     display: flex;
     justify-content: space-around;
+
+    
+ 
+    @media screen and (max-width:768px){
+   
+
+    flex-wrap:wrap;
+
+    width:32vh;
+  
+      
+  
+   
+
+    }
 `
 
 export const NavItem = styled.li`
     list-style: none;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight:bold;
     color: #f2f2f2;
+
+
+    
+    @media screen and (max-width:768px){
+ font-size: 1.2rem;
+      
+    }
 `
 
 export const InputSearch = styled.input `
@@ -49,6 +106,12 @@ export const InputSearch = styled.input `
     border-radius: 5px;
 
 
+    
+
+    @media screen and (max-width:768px){
+        display:none;
+      
+    }
  
    
 `

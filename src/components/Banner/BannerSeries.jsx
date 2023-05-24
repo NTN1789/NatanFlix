@@ -1,5 +1,5 @@
-import React , { useState,useEffect } from "react";
-import categories, { getSeries} from "./api";
+import React, { useState, useEffect } from "react";
+import categories, { getSeries } from "./api";
 import { BoxTilte, ButtonMovies, OverviewMovies, TilteMovies, VoteMovies } from "./BannerStyles"
 import { FaStar } from "react-icons/fa";
 
@@ -31,51 +31,39 @@ function BannerSeries() {
 
   return (
     <div
-  
+
       style={{
-  
         backgroundImage: `url("https://image.tmdb.org/t/p/original/${serie?.backdrop_path}")`,
         width: "100%",
         backgroundSize: "cover",
         backgroundPosition: "center ",
         backgroundRepeat: "no-repeat",
-        backgroundColor:"transparent",
-     
-   
-      height: "95vh",
-   
+        backgroundColor: "transparent",
+        height: "50vw",
       }}
     >
       <BoxTilte >
         <TilteMovies>
-         
-          <VoteMovies>
-        {truncate(serie?.vote_average)}
-            <FaStar style={{color:"yellow"}}  />
+        <VoteMovies>
+            {truncate(serie?.vote_average)}
+            <FaStar style={{ color: "yellow" }} />
           </VoteMovies>
-          {serie?.title || serie?.name }
+          {serie?.title || serie?.name}
         </TilteMovies>
-      
         <div >
           <OverviewMovies>{serie.overview}</OverviewMovies>
-        
-         <ButtonMovies>
-                        <span>
-                        <i className="fa-solid fa-play"></i>
-                          
-                          Assistir agora
-                        </span>
-                  
-                          
-                        <span>
-                        <i className="fa-solid fa-film"></i>
-                          Trailer
+          <ButtonMovies>
+            <span style={{ backgroundColor: "red" }}>
+              <i className="fa-solid fa-play"></i>
+              Assistir agora
+            </span>
+            <span>
+              <i className="fa-solid fa-film"></i>
+              Trailer
+            </span>
+          </ButtonMovies>
 
-                        </span>
-                 
-    </ButtonMovies>
-      
-          
+
         </div>
       </BoxTilte>
     </div>

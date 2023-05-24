@@ -6,16 +6,21 @@ position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8vw;
+  width:20%;
   
- 
 
-    .modal-content {
-    max-width: 800px;
-    border-radius: 50px;
   
-  }
+  @media screen and (max-width:768px){
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+ width:20vh;
     
+
+  }
+
   
  
   
@@ -29,7 +34,11 @@ float: right;
 cursor: pointer;
 background:transparent;
 border:none;
-
+@media screen and (max-width:768px){
+    float:left;
+  font-size:2.5rem;
+  color:red
+  }
 
 
 `
@@ -38,10 +47,26 @@ border:none;
 export const Informacao =  styled.h3`
 font-size:1.9rem;
 font-weight:bold;
+width:70%;
+@media screen and (max-width:768px){
+
+  font-size:1.5rem;
+  word-break: break-all;
+  width:45%;
+
+  }
 ` 
 
 export const ImageFilmes = styled.img`
 background-size: cover;
-height: 100vh;
+height: 100%;
+
+@media screen and (max-width:768px){
+   height:50vw;
+    
+
+
+
+  }
 
 `

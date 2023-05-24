@@ -12,10 +12,10 @@ function modal(movie, id) {
   const genrs =   `https://api.themoviedb.org/3/genre/movie/list?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-BR${movie.informacao.id}  `
 
 
+const Videos =  `https://api.themoviedb.org/3/movie/${movie.informacao.id}?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-BR&append_to_response=videos`
 
 
-
-
+console.log(Videos)
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -26,29 +26,34 @@ function modal(movie, id) {
     setIsOpen(false);
   }
 
-  
 
   
 
   return (
     <ContainerModal>
-      <button onClick={openModal}><i  style={{color: "red" , fontSize: "20px"}} className="fa-light fa-info"></i></button>
+      <button style={{backgroundColor: "transparent", border: "none", color: "red", fontSize: "40px", cursor: "pointer"}} onClick={openModal}>
+      <span>
+                        <i style={{cursor:'pointer'}}   className="fa-solid fa-play"></i>
+          
+                        </span>
+          </button>
       <Modal
         key={id}
       
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
      
-      
+   
       >
        
    <ButtonFechar onClick={closeModal}>X</ButtonFechar>
 
-   <Informacao key={id}>     {movie.informacao.title } </Informacao>
+
         {
          <ImageFilmes key={id} src={img_path + movie.informacao.backdrop_path} />
         }
       
+      <Informacao  style={{color:"gray"}} key={id}>     { ` Titulo: ${movie.informacao.title}`} </Informacao>
       <Informacao>
           {movie.informacao.overview}
         </Informacao>
@@ -63,7 +68,13 @@ function modal(movie, id) {
      <Informacao>{`titulo original:  ${ movie.informacao.original_title} `}</Informacao>
      <Informacao>{`Genero:  ${movie.informacao.id.genres} `}</Informacao>
   
-
+        <Informacao>
+        <iframe
+                                    src={`https://www.youtube.com/embed/${Videos}`}
+           
+                                 
+                       
+                                ></iframe> </Informacao>
    
       
       </Modal>

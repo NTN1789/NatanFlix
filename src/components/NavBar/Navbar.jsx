@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Logo,Container, UL,Boxes, Input } from "./HeaderStyles"
+import { Logo, Container, UL, Boxes, Input } from "./HeaderStyles"
 
 
 import Dell from "../../assets/Dell.png"
@@ -12,46 +12,28 @@ import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <> 
+    <>
 
-    <GlobalStyle/>
-
-   
-       <Container>
+      <GlobalStyle />
+      <Container>
         <NavLink>
-
-      <Logo src={Dell} alt="" />
+          <Logo src={Dell} alt="" />
         </NavLink>
-      
-    
         <UL>
-        <li>
-                    <NavLink to="/">Home</NavLink>
-                </li>
-
-                <li>
-                    <NavLink to="/series">series</NavLink>
-                </li>
-
-                
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/series">series</NavLink>
+          </li>
         </UL>
-
         <Boxes>
-
-
-        <Input type="text" placeholder="Buscar" />
-<img src={Buscar} alt="" /> 
-
-<NavLink  style={{color:"white", textDecoration:"none",}}  to="/login">Login</NavLink>
+          <Input type="text" placeholder="Buscar" />
+          <img src={Buscar} alt="" />
+          <NavLink style={{ color: "white", textDecoration: "none", }} to="/login">Login</NavLink>
         </Boxes>
-       </Container>
-   
-   
-
-
-
-    
-      </>
+      </Container>
+    </>
   )
 }
 
@@ -59,5 +41,4 @@ export default Header
 
 
 
-   
-    
+

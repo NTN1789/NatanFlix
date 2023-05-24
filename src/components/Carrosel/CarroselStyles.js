@@ -7,6 +7,13 @@ align-items:center;
 width:87%;
 height:6.5vh;
 
+@media screen and (max-width:768px){
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    
+  }
 
 `
 
@@ -15,6 +22,7 @@ color:white;
 font-family: normal normal bold ;
     font-size: 2rem;
     font-weight:bold;
+    
     
     `
 
@@ -26,6 +34,8 @@ export const NavBar = styled.nav`
     align-items: center;
     width:75%;
  
+
+
    
  
 `
@@ -59,7 +69,14 @@ background: -webkit-linear-gradient(rgb(10, 10, 10), rgb(10, 10, 10));
 display:flex;
 justify-content:center;
 align-items:center;
-height:33vw;
+height:35vw;
+
+@media screen and (max-width:768px){
+        display:flex;
+        height:60vw;
+      
+    }
+
 
 
 

@@ -1,74 +1,56 @@
 import React, { useEffect, useState } from 'react'
-import {  ContainerMain,  } from "./FilmesStyles"
+import { ContainerMain, } from "./FilmesStyles"
 import Card from './Card'
 import { GlobalStyle } from '../../styles/Global'
-import { Caixa, Slogan  } from '../Carrosel/CarroselStyles'
+import { Caixa, Slogan } from '../Carrosel/CarroselStyles'
 import Modal from '../Modal/Modal'
-import { ButtonPage, ContainerPage } from '../Pagination/page.Styles'
-
-
-
-
-
-
-
-
-
-
+import Pagination from '../Pagination/Pagination'
 
 const Main = () => {
-  
-  const baseUrl = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page" 
-const [movieData,setMovieData] = useState([])
-const [urlSte,setUrl] = useState(baseUrl)
-const [index, setIndex] = useState(0)
 
+  const baseUrl = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page"
+  const [movieData, setMovieData] = useState([])
+  const [urlSte, setUrl] = useState(baseUrl)
+  const [index, setIndex] = useState(0)
 
+  useEffect(() => {
 
+    fetch(urlSte)
+      .then(res => res.json())
+      .then(data => {
 
-useEffect(() => {
+        setMovieData(data.results)
 
-  fetch(urlSte)
-  .then(res => res.json())
-  .then(data => {
-   
-    setMovieData(data.results)
-
-  }
-  )
-} , [urlSte])
-
-
-
+      }
+      )
+  }, [urlSte])
 
   return (
-     
+
     <ContainerMain >
-    <GlobalStyle/>
-   <Caixa>
+      <GlobalStyle />
+      <Caixa>
 
-<Slogan>Em alta</Slogan>
-   </Caixa>
-   
-    {
-        
-        (movieData.length === 0 ) ? <p>not found</p> : movieData.map((res,id) =>{
-          return(
+        <Slogan>Em alta</Slogan>
+      </Caixa>
+
+      {
+        (movieData.length === 0) ? <p>not found</p> : movieData.map((res, id) => {
+          return (
             <>
-            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>  
-            <Card informacao={res} key={id} />
-           
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <Card informacao={res} key={id} />
 
-            <Modal informacao={res} key={id} />
-            </div>
+
+                <Modal informacao={res} key={id} />
+              </div>
             </>
           )
-          
+
         })
-      }  
-
-
-      </ContainerMain>
+      }
+      <Pagination />
+    </ContainerMain>
   )
 }
 
