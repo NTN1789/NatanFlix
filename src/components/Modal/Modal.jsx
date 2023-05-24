@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import Modal from "react-modal"
 import {ButtonFechar, ContainerModal, ImageFilmes, Informacao} from "./ModalStyles"
 import { FaStar } from "react-icons/fa";
@@ -12,10 +12,25 @@ function modal(movie, id) {
   const genrs =   `https://api.themoviedb.org/3/genre/movie/list?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-BR${movie.informacao.id}  `
 
 
-const Videos =  `https://api.themoviedb.org/3/movie/${movie.informacao.id}?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-BR&append_to_response=videos`
+const VideosApi =  `https://api.themoviedb.org/3/movie/${movie.informacao}?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-BR&append_to_response=videos`
 
 
-console.log(Videos)
+
+const [videos, setVideos] = useState([])
+
+useEffect(() => { 
+  fetch(VideosApi, genrs)
+  .then(response => response.json())
+  .then(data => {
+    setVideos(data.videos.results)
+    setVideos(data.genres.results)
+  })
+})
+
+
+console.log(videos)
+
+
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -69,14 +84,26 @@ console.log(Videos)
      <Informacao>{`Genero:  ${movie.informacao.id.genres} `}</Informacao>
   
         <Informacao>
-        <iframe
-                                    src={`https://www.youtube.com/embed/${Videos}`}
-           
-                                 
-                       
-                                ></iframe> </Informacao>
-   
+          {
+              (videos.length === 0) ?<p>Carregando...</p> : videos.map((Videos ) => {
+
+                 return(
+                    <>
+                   <iframe key={id}
+                   src={`https://www.youtube.com/embed/${Videos.movie}`}
+                   
+                   
+                   
+                   ></iframe>
+                   </>
+                   ) 
+                
+                
+              })
+              }
+              </Informacao>
       
+
       </Modal>
     </ContainerModal>
   );

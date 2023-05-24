@@ -8,10 +8,10 @@ import Pagination from '../Pagination/Pagination'
 
 const Main = () => {
 
-  const baseUrl = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page"
+  const baseUrl = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page "
   const [movieData, setMovieData] = useState([])
   const [urlSte, setUrl] = useState(baseUrl)
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(1)
 
   useEffect(() => {
 

@@ -24,7 +24,7 @@ height:8.5vh;
 export const Slogan = styled.h1 `
 color:white;
 font-family: normal normal bold ;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight:bold;
 
     @media screen and (max-width:768px){
@@ -54,7 +54,7 @@ export const NavBar = styled.nav`
     align-items:center;
   
     width:100%;
-    height : 25vh;
+    height : 26vh;
     
 
 
@@ -69,15 +69,16 @@ export const NavList = styled.ul`
     width: 100%;
     display: flex;
     justify-content: space-around;
+    flex-wrap:wrap;
 
     
  
     @media screen and (max-width:768px){
    
 
-    flex-wrap:wrap;
+  
 
-    width:32vh;
+    width:39vh;
   
       
   
@@ -88,7 +89,7 @@ export const NavList = styled.ul`
 
 export const NavItem = styled.li`
     list-style: none;
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     font-weight:bold;
     color: #f2f2f2;
 

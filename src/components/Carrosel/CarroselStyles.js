@@ -69,11 +69,11 @@ background: -webkit-linear-gradient(rgb(10, 10, 10), rgb(10, 10, 10));
 display:flex;
 justify-content:center;
 align-items:center;
-height:35vw;
+height:40vw;
 
 @media screen and (max-width:768px){
         display:flex;
-        height:60vw;
+        height:70vw;
       
     }
 

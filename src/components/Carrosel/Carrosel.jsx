@@ -47,7 +47,7 @@ const Carrosel = () => {
   return (
     <div>
       <GlobalStyle />
-      <Carousel responsive={responsive} infinite={true} autoPlay={2000}   >
+      <Carousel responsive={responsive} infinite={true} autoPlay={2000} removeArrowOnDeviceType={["tablet", "mobile"]}  >
         {
           (movieData.length === 0) ? <p>not found</p> : movieData.map((res, id) => {
             return (

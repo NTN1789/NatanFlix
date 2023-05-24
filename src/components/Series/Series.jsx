@@ -76,7 +76,7 @@ const Series = () => {
       <Navegacao />
 
 
-      <Carousel responsive={responsive} infinite={true} autoPlay={2000}   >
+      <Carousel responsive={responsive} infinite={true} autoPlay={2000}  removeArrowOnDeviceType={["tablet", "mobile"]}   >
 
         {
           movieData.map((res, id) => {
