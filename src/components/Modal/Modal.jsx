@@ -1,5 +1,7 @@
 import React, { useState , useEffect } from "react";
+import axios from "axios";
 import Modal from "react-modal"
+import { useQuery } from "react-query";
 import {ButtonFechar, ContainerModal, ImageFilmes, Informacao} from "./ModalStyles"
 import { FaStar } from "react-icons/fa";
 
@@ -12,23 +14,22 @@ function modal(movie, id) {
   const genrs =   `https://api.themoviedb.org/3/genre/movie/list?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-BR${movie.informacao.id}  `
 
 
-const VideosApi =  `https://api.themoviedb.org/3/movie/${movie.informacao}?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-BR&append_to_response=videos`
+  const {data , isLoading} = useQuery ("videos" , () => {
+    return axios.get(    `https://api.themoviedb.org/3/movie/${movie.informacao.id}?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-BR&append_to_response=videos`)
+    .then((response) => response.data)
+
+  });
+
+
+if(isLoading){ 
+  return <p>Carregando...</p>
+
+
+}
 
 
 
-const [videos, setVideos] = useState([])
-
-useEffect(() => { 
-  fetch(VideosApi, genrs)
-  .then(response => response.json())
-  .then(data => {
-    setVideos(data.videos.results)
-    setVideos(data.genres.results)
-  })
-})
-
-
-console.log(videos)
+console.log(data)
 
 
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -83,24 +84,17 @@ console.log(videos)
      <Informacao>{`titulo original:  ${ movie.informacao.original_title} `}</Informacao>
      <Informacao>{`Genero:  ${movie.informacao.id.genres} `}</Informacao>
   
-        <Informacao>
-          {
-              (videos.length === 0) ?<p>Carregando...</p> : videos.map((Videos ) => {
-
-                 return(
-                    <>
-                   <iframe key={id}
-                   src={`https://www.youtube.com/embed/${Videos.movie}`}
-                   
-                   
-                   
-                   ></iframe>
-                   </>
-                   ) 
-                
-                
-              })
-              }
+        <Informacao  key={id}>
+        {data.videos.results.length > 0 && (
+                                <iframe
+                                     
+                                    src={`https://www.youtube.com/embed/${data.videos.results[1].key}`}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    title="YouTube video player"
+                                    allowFullScreen
+                                ></iframe>
+                            )}
+         
               </Informacao>
       
 
