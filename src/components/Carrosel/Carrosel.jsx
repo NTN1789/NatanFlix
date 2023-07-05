@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useState, useEffect } from "react";
@@ -31,7 +31,7 @@ const Carrosel = () => {
     }
   };
   const [movieData, setMovieData] = useState([])
-  const [urlSte, setUrl] = useState(url)
+  const [urlSte] = useState(url)
 
   useEffect(() => {
 

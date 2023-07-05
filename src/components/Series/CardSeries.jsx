@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Containercard, Letrasfilme } from '../Filmes/CardStyles'
 
 const CardSeries = (series) => {

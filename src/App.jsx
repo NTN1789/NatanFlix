@@ -5,7 +5,7 @@ import NavBar from "./components/NavBar/Navbar"
 
 
 import Series from "./components/Series/Series"
-import Filmes from "./components/Movies/Home"
+import Filmes from "./components/Filmes/Filmes"
 
 import Login from "./components/Login/Login"
 

@@ -43,10 +43,10 @@ const Series = () => {
 
 
   const [seriesData, setSeriesData] = useState([])
-  const [url, setUrlSeries] = useState(series)
+  const [url] = useState(series)
 
   const [movieData, setMovieData] = useState([])
-  const [urlSte, setUrl] = useState(base_url)
+  const [urlSte] = useState(base_url)
 
   useEffect(() => {
 

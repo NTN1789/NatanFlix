@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { ContainerMain, } from "./FilmesStyles"
 import Card from './Card'
 import { GlobalStyle } from '../../styles/Global'
@@ -10,8 +10,8 @@ const Main = () => {
 
   const baseUrl = "https://api.themoviedb.org/3/movie/popular?api_key=971f03eef96c481fd72b934bef826ce4&language=pt-br&page "
   const [movieData, setMovieData] = useState([])
-  const [urlSte, setUrl] = useState(baseUrl)
-  const [index, setIndex] = useState(1)
+  const [urlSte] = useState(baseUrl)
+
 
   useEffect(() => {
 

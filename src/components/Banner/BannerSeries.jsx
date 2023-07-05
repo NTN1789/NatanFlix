@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import categories, { getSeries } from "./api";
 import { BoxTilte, ButtonMovies, OverviewMovies, TilteMovies, VoteMovies } from "./BannerStyles"
 import { FaStar } from "react-icons/fa";

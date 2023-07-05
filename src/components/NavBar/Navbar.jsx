@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import {useState} from 'react'
 
 import { Logo, Container, UL, Boxes, Input, MenuMobile} from "./HeaderStyles"
 

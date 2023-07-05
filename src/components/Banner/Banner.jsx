@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import categories, { getMovies } from "./api";
 import { FaStar } from "react-icons/fa"
-import { AiFillPlayCircle } from "react-icons/ai"
 
 import { BoxTilte, ButtonMovies, OverviewMovies, TilteMovies, VoteMovies } from "./BannerStyles"
 

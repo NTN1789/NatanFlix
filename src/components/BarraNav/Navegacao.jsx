@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { NavBar, NavList, NavItem, Caixa, Slogan } from "./Barra"
 import Buscar from "../../assets/buscar.png"
 import { Input } from '../NavBar/HeaderStyles'
