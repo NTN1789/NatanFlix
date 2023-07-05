@@ -1,5 +1,5 @@
-import React, { useState  } from "react";
-import { useParams } from "react-router-dom";
+import  { useState  } from "react";
+
 import axios from 'axios'
 import { useQuery } from "react-query";
 import Modal from "react-modal"
